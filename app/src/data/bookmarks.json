@@ -5941,5 +5941,24 @@
       "csrf",
       "אבטחה"
     ]
+  },
+  {
+    "url": "https://www.instagram.com/reel/DXtj1zMjZDS/",
+    "domain": "instagram.com",
+    "category": "video",
+    "date_shared": "2026-05-05",
+    "time_shared": "22:21",
+    "context": "ריל של eliron giny ai tech על Claude Code, כלי התראות push ושליטה מרחוק.",
+    "title": "ריל על Claude Code, התראות פוש ושליטה מרחוק",
+    "description": "ריל שמציג שימוש ב-Claude Code יחד עם כלי התראות push ושליטה מרחוק כדי לקבל עדכונים ולעבוד חכם יותר.",
+    "topic": "AI וטכנולוגיה",
+    "thumbnail": null,
+    "tags": [
+      "claude code",
+      "push notifications",
+      "אוטומציה",
+      "remote control",
+      "ai"
+    ]
   }
 ]
