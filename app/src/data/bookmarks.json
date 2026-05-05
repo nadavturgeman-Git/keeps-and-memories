@@ -5922,5 +5922,24 @@
       "crm",
       "מכירות"
     ]
+  },
+  {
+    "url": "https://www.instagram.com/reel/DXwg7uzMzkW/",
+    "domain": "instagram.com",
+    "category": "video",
+    "date_shared": "2026-05-05",
+    "time_shared": "21:26",
+    "context": "ריל של ShavitZamir.AI על חולשות אבטחה כמו SQL Injection, XSS, CSRF וגניבת טוקנים.",
+    "title": "ריל על חולשות אבטחה נפוצות בפיתוח ווב",
+    "description": "ריל שמסביר על בעיות אבטחה נפוצות בפיתוח ווב כמו SQL Injection, XSS, CSRF וגניבת טוקנים.",
+    "topic": "תכנות",
+    "thumbnail": null,
+    "tags": [
+      "security",
+      "sql injection",
+      "xss",
+      "csrf",
+      "אבטחה"
+    ]
   }
 ]
