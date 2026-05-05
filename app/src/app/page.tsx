@@ -77,44 +77,44 @@ function BookmarkRow({
     <div className="group relative flex items-stretch transition-colors hover:bg-zinc-50 dark:hover:bg-zinc-900/50">
       <div className={`w-1 shrink-0 rounded-full ${colors.bar}`} />
 
-      <div className="flex-1 min-w-0 py-3 px-4">
-        <div className="flex items-start gap-3">
-          <span className="mt-0.5 text-base shrink-0" title={bookmark.category}>{catIcon}</span>
+      <div className="flex-1 min-w-0 py-2.5 sm:py-3 px-3 sm:px-4 overflow-hidden">
+        <div className="flex items-start gap-2 sm:gap-3">
+          <span className="mt-0.5 text-sm sm:text-base shrink-0" title={bookmark.category}>{catIcon}</span>
 
           <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-2 flex-wrap">
+            <div className="flex items-start gap-1.5 sm:gap-2">
               <a
                 href={bookmark.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium text-zinc-900 dark:text-zinc-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors line-clamp-1"
+                className="text-[13px] sm:text-sm font-medium text-zinc-900 dark:text-zinc-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors line-clamp-2 sm:line-clamp-1 min-w-0 flex-1"
               >
                 {displayTitle}
               </a>
-              <span className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-medium ${colors.badge} ${colors.text}`}>
+              <span className={`shrink-0 rounded-full px-1.5 sm:px-2 py-0.5 text-[9px] sm:text-[10px] font-medium whitespace-nowrap ${colors.badge} ${colors.text}`}>
                 {bookmark.topic}
               </span>
             </div>
 
             {bookmark.description && (
-              <p className="mt-0.5 text-xs text-zinc-500 dark:text-zinc-500 line-clamp-1">
+              <p className="mt-0.5 text-[11px] sm:text-xs text-zinc-500 dark:text-zinc-500 line-clamp-1">
                 {bookmark.description}
               </p>
             )}
 
-            <div className="mt-1.5 flex items-center gap-2 flex-wrap">
-              <span className="text-[11px] text-zinc-400 dark:text-zinc-600">{cleanDomain}</span>
+            <div className="mt-1 sm:mt-1.5 flex items-center gap-1.5 sm:gap-2 flex-wrap">
+              <span className="text-[10px] sm:text-[11px] text-zinc-400 dark:text-zinc-600 truncate max-w-[100px] sm:max-w-none">{cleanDomain}</span>
               <span className="text-zinc-300 dark:text-zinc-700">·</span>
-              <span className="text-[11px] text-zinc-400 dark:text-zinc-600">{formatDate(bookmark.date_shared)}</span>
+              <span className="text-[10px] sm:text-[11px] text-zinc-400 dark:text-zinc-600">{formatDate(bookmark.date_shared)}</span>
 
               {bookmark.tags?.length > 0 && (
                 <>
-                  <span className="text-zinc-300 dark:text-zinc-700">·</span>
-                  {bookmark.tags.slice(0, 4).map((tag) => (
+                  <span className="text-zinc-300 dark:text-zinc-700 hidden sm:inline">·</span>
+                  {bookmark.tags.slice(0, 3).map((tag, idx) => (
                     <button
                       key={tag}
                       onClick={() => onTagClick(tag)}
-                      className="rounded bg-zinc-100 px-1.5 py-0.5 text-[10px] text-zinc-500 hover:bg-indigo-100 hover:text-indigo-600 dark:bg-zinc-800 dark:text-zinc-500 dark:hover:bg-indigo-950 dark:hover:text-indigo-400 transition-colors"
+                      className="rounded bg-zinc-100 px-1.5 py-0.5 text-[9px] sm:text-[10px] text-zinc-500 hover:bg-indigo-100 hover:text-indigo-600 dark:bg-zinc-800 dark:text-zinc-500 dark:hover:bg-indigo-950 dark:hover:text-indigo-400 transition-colors"
                     >
                       {tag}
                     </button>
@@ -186,16 +186,16 @@ export default function Home() {
 
   return (
     <div className={dark ? "dark" : ""}>
-      <div className="min-h-screen bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 transition-colors" dir="rtl">
+      <div className="min-h-screen overflow-x-hidden bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 transition-colors" dir="rtl">
         {/* Header */}
         <header className="sticky top-0 z-20 border-b border-zinc-200 bg-white/80 backdrop-blur-xl dark:border-zinc-800 dark:bg-zinc-950/80">
-          <div className="mx-auto max-w-5xl px-4 py-3">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-indigo-600 text-white font-bold text-sm">
+          <div className="mx-auto max-w-5xl px-3 sm:px-4 py-2 sm:py-3">
+            <div className="flex items-center justify-between gap-2">
+              <div className="flex items-center gap-2 shrink-0">
+                <div className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-xl bg-indigo-600 text-white font-bold text-xs sm:text-sm">
                   K
                 </div>
-                <div>
+                <div className="hidden sm:block">
                   <h1 className="text-lg font-bold">Keeps & Memories</h1>
                   <p className="text-[11px] text-zinc-400">
                     {allBookmarks.length} קישורים · {topics.length} נושאים
@@ -203,11 +203,11 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-2">
-                <div className="relative">
+              <div className="flex items-center gap-1.5 sm:gap-2 flex-1 sm:flex-none justify-end">
+                <div className="relative flex-1 sm:flex-none">
                   <svg
                     className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-400"
-                    width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                    width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
                   >
                     <circle cx="11" cy="11" r="8" />
                     <line x1="21" y1="21" x2="16.65" y2="16.65" />
@@ -223,12 +223,12 @@ export default function Home() {
                         setActiveTag(null);
                       }
                     }}
-                    className="w-48 sm:w-64 rounded-lg border border-zinc-200 bg-zinc-50 pr-9 pl-3 py-2 text-sm placeholder-zinc-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder-zinc-600"
+                    className="w-full sm:w-64 rounded-lg border border-zinc-200 bg-zinc-50 pr-9 pl-3 py-1.5 sm:py-2 text-sm placeholder-zinc-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder-zinc-600"
                   />
                 </div>
                 <button
                   onClick={() => setSortNewestFirst((v) => !v)}
-                  className="flex items-center gap-1.5 rounded-lg border border-zinc-200 bg-zinc-50 px-2.5 py-2 text-sm text-zinc-500 transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800"
+                  className="flex shrink-0 items-center rounded-lg border border-zinc-200 bg-zinc-50 p-1.5 sm:px-2.5 sm:py-2 text-sm text-zinc-500 transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800"
                   title={sortNewestFirst ? "חדש → ישן" : "ישן → חדש"}
                 >
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -241,7 +241,7 @@ export default function Home() {
                 </button>
                 <button
                   onClick={() => setDark((d) => !d)}
-                  className="rounded-lg p-2 transition-colors hover:bg-zinc-200 dark:hover:bg-zinc-800"
+                  className="shrink-0 rounded-lg p-1.5 sm:p-2 transition-colors hover:bg-zinc-200 dark:hover:bg-zinc-800"
                 >
                   {dark ? (
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
