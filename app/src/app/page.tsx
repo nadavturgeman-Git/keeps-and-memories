@@ -188,6 +188,7 @@ export default function Home() {
   const [activeTag, setActiveTag] = useState<string | null>(null);
   const [search, setSearch] = useState("");
   const [dark, setDark] = useState(true);
+  const [sortNewestFirst, setSortNewestFirst] = useState(true);
 
   const topics = useMemo(() => {
     const map = new Map<string, number>();
@@ -223,9 +224,11 @@ export default function Home() {
     }
 
     return [...results].sort((a, b) =>
-      b.date_shared.localeCompare(a.date_shared)
+      sortNewestFirst
+        ? b.date_shared.localeCompare(a.date_shared)
+        : a.date_shared.localeCompare(b.date_shared)
     );
-  }, [allBookmarks, activeTopic, activeTag, search]);
+  }, [allBookmarks, activeTopic, activeTag, search, sortNewestFirst]);
 
   const handleDragStart = useCallback((e: React.DragEvent, bm: Bookmark) => {
     e.dataTransfer.setData("text/plain", bm.url);
@@ -312,6 +315,20 @@ export default function Home() {
                     className="w-64 rounded-lg border border-zinc-200 bg-zinc-50 pr-9 pl-3 py-2 text-sm placeholder-zinc-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder-zinc-600"
                   />
                 </div>
+                <button
+                  onClick={() => setSortNewestFirst((v) => !v)}
+                  className="flex items-center gap-1.5 rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-sm text-zinc-600 transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800"
+                  title={sortNewestFirst ? "חדש → ישן" : "ישן → חדש"}
+                >
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    {sortNewestFirst ? (
+                      <><path d="M12 5v14"/><path d="M5 12l7 7 7-7"/></>
+                    ) : (
+                      <><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></>
+                    )}
+                  </svg>
+                  <span className="hidden sm:inline">{sortNewestFirst ? "חדש → ישן" : "ישן → חדש"}</span>
+                </button>
                 <ThemeToggle dark={dark} onToggle={toggleTheme} />
               </div>
             </div>
