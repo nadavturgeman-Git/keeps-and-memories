@@ -5998,5 +5998,24 @@
       "סקריפטים",
       "קוד"
     ]
+  },
+  {
+    "url": "https://www.facebook.com/share/p/18VCmoDUs9/",
+    "domain": "facebook.com",
+    "category": "social",
+    "date_shared": "2026-05-06",
+    "time_shared": "17:49",
+    "context": "פוסט בפייסבוק על זה שרוב האנשים שעובדים עם Claude Code עדיין עובדים כמו פעם, במקום להשתמש בו בצורה חכמה יותר.",
+    "title": "רוב האנשים שעובדים עם Claude Code עדיין עובדים כמו פעם",
+    "description": "פוסט שמדבר על כך שרוב המשתמשים ב-Claude Code עדיין לא מנצלים אותו נכון ועובדים איתו בגישה ישנה.",
+    "topic": "AI וטכנולוגיה",
+    "thumbnail": null,
+    "tags": [
+      "claude code",
+      "ai",
+      "פרודוקטיביות",
+      "אוטומציה",
+      "workflow"
+    ]
   }
 ]
