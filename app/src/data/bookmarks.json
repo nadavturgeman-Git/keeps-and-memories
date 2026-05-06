@@ -6017,5 +6017,24 @@
       "אוטומציה",
       "workflow"
     ]
+  },
+  {
+    "url": "https://superset.sh/",
+    "domain": "superset.sh",
+    "category": "tool",
+    "date_shared": "2026-05-06",
+    "time_shared": "17:50",
+    "context": "כלי שמריץ 10+ סוכני קוד במקביל על אותה מכונה, עם בידוד ב-Git worktrees ותמיכה בכלי CLI שונים.",
+    "title": "Superset – הרצת סוכני קוד במקביל על המחשב שלך",
+    "description": "כלי שמאפשר להריץ עשרות סוכני קוד במקביל, עם בידוד לכל סוכן ב-worktree נפרד ותמיכה ב-Claude Code, Cursor, OpenCode וכלי CLI נוספים.",
+    "topic": "AI וטכנולוגיה",
+    "thumbnail": null,
+    "tags": [
+      "parallel agents",
+      "claude code",
+      "git worktree",
+      "ai tools",
+      "coding agents"
+    ]
   }
 ]
